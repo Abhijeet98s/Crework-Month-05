@@ -13,7 +13,7 @@ exports.createDB = async (req, res) => {
         message: "FullName,CourseName,RollNo,Email,City is required.",
       });
     }
-    const studentData = new StudentSchema({
+    const studentData = await StudentSchema.create({
       fullName,
       courseName,
       rollNo,
@@ -102,6 +102,7 @@ exports.editDB = async (req, res) => {
   try {
     const { stdId } = req.params;
     const { fullName, courseName, rollNo, email, city } = req.body;
+    // console.log(fullName, courseName, rollNo, email, city);
     if (!(stdId || fullName || courseName || rollNo || email || city)) {
       res.status(200).json({
         success: false,
@@ -116,6 +117,7 @@ exports.editDB = async (req, res) => {
       email,
       city,
     });
+    // console.log(studentDB)
     res.json({
       success: true,
       message: "Student data updated successfully",
