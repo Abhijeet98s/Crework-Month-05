@@ -32,13 +32,13 @@ This is a simple Task Management Application build using MERN Stack.
 
 2. ### Task routes:
 
+- Get Task
+
+> localhost:4000/get_tasks/:todoId
+
 - CREATE Task
 
 > localhost:4000/create_task/:todoId
-
-- EDIT Task
-
-> localhost:4000/edit_task/:todoId
 
 - DELETE Task
 
